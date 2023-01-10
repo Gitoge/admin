@@ -1,0 +1,52 @@
+{
+  "applications": "*",
+  "changelogDate": "20220722171607",
+  "clientRootFolder": "admin",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "positions",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typeAgent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "effetSolde",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "statutPosition",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "admin",
+  "name": "Positions",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "typeposition",
+      "otherEntityRelationshipName": "positions",
+      "relationshipName": "typeposition",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

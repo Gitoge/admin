@@ -1,0 +1,53 @@
+{
+  "applications": "*",
+  "changelogDate": "20220718180513",
+  "clientRootFolder": "admin",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "profils",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "admin",
+  "name": "Profils",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "userExtended",
+      "otherEntityRelationshipName": "profils",
+      "relationshipName": "userProfil",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "roles",
+      "otherEntityRelationshipName": "profils",
+      "ownerSide": true,
+      "relationshipName": "roles",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "modules",
+      "otherEntityRelationshipName": "profils",
+      "relationshipName": "modules",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

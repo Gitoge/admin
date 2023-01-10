@@ -1,0 +1,322 @@
+entity Applications {
+ 	code String required,
+   	nom String required,
+   	description String
+}
+
+entity Modules {
+   code String required,
+   libelle String required,
+   description String,
+   icon String,
+   ordre Long,
+   routerLink String,
+   type String,
+   active Boolean
+ }
+
+entity Profils {
+   code String required,
+   libelle String required,
+   description String
+}
+
+entity Roles {
+   code String required,
+   libelle String required,
+   description String
+}
+
+entity Pages {
+  code String required,
+  libelle String required,
+  description String
+}
+
+entity Actions {
+  code String required,
+  libelle String required,
+  description String,
+  actionLink String
+}
+
+entity Personne {
+  cni String,
+  dateNaissance LocalDate,
+  email String,
+  fonction String,
+  lieuNaissance String,
+  matricule String,
+  nom String,
+  prenom String,
+  sexe String,
+  telephone String
+}
+
+entity StructureAdmin {
+	code String,
+    libelle String,
+    description String,
+    direction String,
+    departementService String,
+    adresse String
+}
+
+entity UserExtended 
+
+entity TypeEtablissement {
+  code String required,
+  libelle String required,
+  description String
+}
+
+entity TypeLocalite {
+  code String required,
+  libelle String required,
+  description String
+}
+
+entity Localite {
+  code String,
+  estParDefaut String,
+  libelle String,
+  niveau String,
+  ordre String,
+  version String,
+  paysId Integer,
+  insertUserId Integer,
+  insertDate LocalDate
+}
+
+entity Etablissement {
+  code String required,
+  sigle String required,
+  libelle String required,
+  adresse String,
+  numTelephone String,
+  fax String,
+  email String,
+  bp String
+}
+
+entity Direction {
+  code String required,
+  libelle String required,
+  adresse String,
+  numTelephone String,
+  fax String,
+  email String,
+  contact String
+}
+
+entity Service {
+  code String required,
+  libelle String required,
+  adresse String,
+  numTelephone String,
+  fax String,
+  email String,
+  contact String
+}
+
+entity TableTypeValeur {
+  code String required,
+  libelle String required,
+  description String
+}
+
+entity TableValeur {
+  code String required,
+  libelle String required,
+  description String
+}
+
+entity TypeDestinataires {
+  code String required,
+  libelle String required,
+  description String
+}
+
+entity Destinataires {
+  code String required,
+  libelle String,
+  prenom String,
+  nom String,
+  adresse String,
+  comptebancaire String
+}
+
+entity TypeReglement {
+  code String required,
+  libelle String required,
+  description String
+}
+
+entity Reglement {
+  code String required,
+  libelle String,
+  complementinfos String,
+  commentaire String
+}
+
+entity Cadre {
+  code String required,
+  libelle String required,
+  description String,
+  typeSalaire String
+}
+
+entity Hierarchie {
+  code String required,
+  libelle String required,
+  borneInferieure String required,
+  borneSuperieure String required,
+  codEchelonIndiciare String,
+  cadre String
+}
+
+entity Echelon {
+  code String required,
+  libelle String required,
+  description String
+}
+
+entity Classe {
+  code String required,
+  libelle String required,
+  description String
+}
+
+entity Corps {
+  code String required,
+  libelle String required,
+  description String,
+  codHierarchie String,
+  ageRetraite Integer required,
+  classification String
+}
+
+entity Grade {
+  code String required,
+  libelle String required,
+  description String,
+  ancEchClasse String required,
+  nbreEchelon Integer required,
+  echautomatique String,
+  indiceSolde String,
+  salaireEchO Integer,
+  abatDeZone Integer,
+  expatriation Integer,
+  sursalaire Integer,
+  forcageSyst Boolean,
+  maximumAnc Integer,
+  classif Integer,
+  compteEffectif String
+}
+
+entity Emplois {
+  code String required,
+  libelle String required,
+  description String,
+  tauxAt Integer,
+  primeLieEmploi String,
+  indemniteLogement String,
+  indemnitesujetion String,
+  indemnitehabillement String,
+}
+
+entity Indices {
+  code String required,
+  description String,
+  mntSFTenf01 Integer,
+  mntSFTenf02 Integer,
+  soldeIndiciaire Integer
+}
+
+entity Positions {
+  code String required,
+  libelle String required,
+  description String,
+  typeAgent String, //F:Fonctionnaire; N:Non Fonctionnaire; T:Tous les types
+  effetSolde Integer, // 1: Solde normale, 2: Element variable, 0: aucun solde
+  statutPosition Boolean // 1:Actif 0: Gelé
+}
+
+
+/**
+relationship OneToOne {
+  UserExtended{internalUser} to User
+  UserExtended{user(login)} to User
+}
+**/
+
+relationship OneToMany {
+	Applications{module} to Modules{application}
+}
+
+relationship OneToMany {
+	Modules{profil} to Profils{module}
+}
+
+relationship ManyToMany {
+	Profils{role} to Roles{profil} 
+}
+
+relationship ManyToMany {
+	Roles{page} to Pages{role} 
+}
+
+relationship ManyToMany {
+	Pages{action} to Actions{page} 
+}
+
+relationship ManyToOne{
+	Profils{userProfil} to UserExtended
+}
+
+relationship OneToOne {
+	StructureAdmin{userAdminStructure} to UserExtended,
+    Personne{userKnowPersonne} to UserExtended
+}
+
+relationship OneToMany {
+	TypeEtablissement{etab} to Etablissement{typeEtab}
+}
+
+relationship OneToMany {
+	TypeLocalite{localite} to Localite{typeLocalite}
+}
+
+relationship OneToOne {
+	Localite{localite} to Localite{RattachementId}
+}
+
+relationship OneToMany {
+	Localite{etab} to Etablissement{localite}
+}
+
+relationship OneToMany {
+	Etablissement{direction} to Direction{etab}
+}
+
+relationship OneToMany {
+	Direction{service} to Service{direction}
+}
+
+relationship OneToMany {
+	TableTypeValeur{tablevaleur} to TableValeur{tabletypevaleur}
+}
+
+relationship OneToMany {
+	TypeDestinataires{destinataires} to Destinataires{typedestinataires}
+}
+
+relationship OneToMany {
+	TypeReglement{reglement} to Reglement{typereglement}
+}
+
+paginate Modules, Profils, Roles, Pages, Actions, Personne, TypeEtablissement, Etablissement, 
+TypeLocalite, Localite, Direction, Service, TableTypeValeur, TableValeur, TypeDestinataires,
+Destinataires, TypeReglement, Reglement, Cadre, Hierarchie, Echelon, Classe, Corps, Grade, 
+Emplois, Indices, Positions
+with infinite-scroll

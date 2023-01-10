@@ -1,0 +1,51 @@
+{
+  "applications": "*",
+  "changelogDate": "20220722171556",
+  "clientRootFolder": "admin",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "destinataires",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "comptebancaire",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "admin",
+  "name": "Destinataires",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "typeDestinataires",
+      "otherEntityRelationshipName": "destinataires",
+      "relationshipName": "typedestinataires",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

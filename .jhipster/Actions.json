@@ -1,0 +1,45 @@
+{
+  "applications": "*",
+  "changelogDate": "20220718180516",
+  "clientRootFolder": "admin",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "actions",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "actionLink",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "admin",
+  "name": "Actions",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "pages",
+      "otherEntityRelationshipName": "actions",
+      "ownerSide": false,
+      "relationshipName": "pages",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

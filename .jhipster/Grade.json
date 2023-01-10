@@ -1,0 +1,91 @@
+{
+  "applications": "*",
+  "changelogDate": "20220722171604",
+  "clientRootFolder": "admin",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "grade",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ancEchClasse",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nbreEchelon",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "echautomatique",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indiceSolde",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "salaireEchO",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "abatDeZone",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "expatriation",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "sursalaire",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "forcageSyst",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "maximumAnc",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "classif",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "compteEffectif",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "admin",
+  "name": "Grade",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "postes",
+      "otherEntityRelationshipName": "grade",
+      "ownerSide": false,
+      "relationshipName": "postes",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

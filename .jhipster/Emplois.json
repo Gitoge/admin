@@ -1,0 +1,61 @@
+{
+  "applications": "*",
+  "changelogDate": "20220722171605",
+  "clientRootFolder": "admin",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "emplois",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tauxAt",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "primeLieEmploi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indemniteLogement",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indemnitesujetion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indemnitehabillement",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "admin",
+  "name": "Emplois",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "postes",
+      "otherEntityRelationshipName": "emplois",
+      "ownerSide": false,
+      "relationshipName": "postes",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

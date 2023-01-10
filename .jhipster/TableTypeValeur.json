@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20220722171553",
+  "clientRootFolder": "admin",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "table_type_valeur",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "admin",
+  "name": "TableTypeValeur",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "tableValeur",
+      "otherEntityRelationshipName": "tabletypevaleur",
+      "relationshipName": "tablevaleur",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

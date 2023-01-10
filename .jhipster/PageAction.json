@@ -1,0 +1,23 @@
+{
+  "changelogDate": "20220929155941",
+  "clientRootFolder": "admin",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "pagesId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "actionsId",
+      "fieldType": "Long"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "admin",
+  "name": "PageAction",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

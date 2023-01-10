@@ -1,0 +1,81 @@
+{
+  "applications": "*",
+  "changelogDate": "20220727200555",
+  "clientRootFolder": "admin",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "postes",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typePoste",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "userIdInsert",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "userdateInsert",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "admin",
+  "name": "Postes",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "grade",
+      "otherEntityRelationshipName": "postes",
+      "ownerSide": false,
+      "relationshipName": "grade",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "hierarchie",
+      "otherEntityRelationshipName": "postes",
+      "ownerSide": false,
+      "relationshipName": "hierarchie",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "corps",
+      "otherEntityRelationshipName": "postes",
+      "ownerSide": false,
+      "relationshipName": "corps",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "emplois",
+      "otherEntityRelationshipName": "postes",
+      "ownerSide": false,
+      "relationshipName": "emplois",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "assiettes",
+      "otherEntityRelationshipName": "postes",
+      "ownerSide": false,
+      "relationshipName": "assiettes",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

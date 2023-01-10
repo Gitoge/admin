@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20220718180514",
+  "clientRootFolder": "admin",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "roles",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "admin",
+  "name": "Roles",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "pages",
+      "otherEntityRelationshipName": "roles",
+      "ownerSide": true,
+      "relationshipName": "pages",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "profils",
+      "otherEntityRelationshipName": "roles",
+      "ownerSide": false,
+      "relationshipName": "profils",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}
