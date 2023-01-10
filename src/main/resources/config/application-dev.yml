@@ -47,10 +47,10 @@ spring:
       # it can be set to any label, branch or commit of the configuration source Git repository
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/admindtaidb
+    url: jdbc:postgresql://host.docker.internal:5434/admindtaidb
     ##deploy
-    username: dtaicep
-    password: Dtaicep2022#
+    username: postgres
+    password: Admin123
     #username: dtaiuser
     #password: Synapdtai22
     hikari:
